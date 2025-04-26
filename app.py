@@ -24,6 +24,10 @@ def dog_image_gallery():
       dog_images = data["message"]
   return render_template("dogs.html")
 
+@app.route("/random", methods=["POST"])
+def get_random():
+  response = requests.get("https://dog.ceo/api/breeds/image/random")
+
 
 app.debug = True
 
