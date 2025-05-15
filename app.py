@@ -33,7 +33,7 @@ def get_random():
   response = requests.get("https://dog.ceo/api/breeds/image/random")
   data = response.json()
   dog_images = [data["message"]]
-  return render_template("dogs.html", images=dog_images)
+  return render_template("dogs.html", images=dog_images, breed="", errors=[])
 
 
 app.debug = True
