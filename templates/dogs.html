@@ -165,14 +165,20 @@
     </form>
   </div>
   <p>OR</p>
-  div class="selectors">
+  <div class="selectors">
     <form action="/random" method="POST" id="randomdogform">
  
       <button type="submit" form="randomdogform" value="Submit">Random Image</button>
     </form>
   </div>
   <div class="content">
-    <img class="dogimage" src="https://images.dog.ceo/breeds/corgi-cardigan/n02113186_2431.jpg"">
+    <h3>{{breed}}</h3>
+
+    {% for image in images %}
+    <div class="dogcontainer">
+      <img src={{image}} class="dogimage">
+    </div>
+    {% endfor %}
   </div>
 </body>
 </html>
